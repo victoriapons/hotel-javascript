@@ -3,3 +3,11 @@ $font-sanserif: 'Raleway',sans-serif;
 
 $color-ppal: rgb(2, 2, 27);
 $color-secund: rgb(175, 193, 199);
+
+//body fuentes
+.font-ppal{
+    font-family: $font-serif;
+}
+.font-secu{
+    font-family: $font-sanserif;
+}
