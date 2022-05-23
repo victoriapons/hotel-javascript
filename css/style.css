@@ -1,3 +1,19 @@
+.font-ppal {
+  font-family: "Lora", serif;
+}
+
+.font-secu {
+  font-family: "Raleway", sans-serif;
+}
+
+.font-ppal {
+  font-family: "Lora", serif;
+}
+
+.font-secu {
+  font-family: "Raleway", sans-serif;
+}
+
 .navbar-modified {
   background-color: transparent;
   font-family: "Raleway", sans-serif;
@@ -20,14 +36,6 @@
   background-position: bottom;
   background-size: cover;
   text-align: center;
-}
-
-.font-ppal {
-  font-family: "Lora", serif;
-}
-
-.font-secu {
-  font-family: "Raleway", sans-serif;
 }
 
 .text-white {
@@ -84,11 +92,31 @@
   margin-left: 2rem;
 }
 
+footer {
+  padding-top: 10px;
+  background-color: #afc1c7;
+}
+footer div ul li {
+  list-style: none;
+}
+footer div ul li div ul li p {
+  text-align: center;
+  font-size: small;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  color: #02021b;
+  text-decoration: none;
+}
+
 /*mobile*/
 @media (min-width: 0) and (max-width: 768px) {
   .margin-top-h1 {
     margin-top: 2rem;
     text-align: center;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 /*tablet*/
@@ -96,6 +124,8 @@
   .margin-top-h1 {
     margin-top: 2rem;
     text-align: center;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 .title-ppal {

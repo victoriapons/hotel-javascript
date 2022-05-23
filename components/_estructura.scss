@@ -69,3 +69,24 @@
 .image-bar-margin {
     margin-left: 2rem;
 }
+
+
+
+//footer
+footer {
+    padding-top: 10px;
+    background-color: $color-secund;
+    div ul li {
+        list-style: none;
+        text-align: center;
+    div ul li p {
+        font-size: small;
+        font-family: $font-sanserif;
+}
+}
+}
+
+a {
+    color: $color-ppal;
+    text-decoration: underline;
+}
