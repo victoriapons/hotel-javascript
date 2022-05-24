@@ -16,7 +16,9 @@ class Reserva_hotel {
     //metodo para mostrar descripcion: detalle de reserva 
 
     detalle_reserva () {
-        return ("\n#" + this.id + "\n" + this.nombre + " " + this.apellido + "\nAdultos: " + this.adultos + "\nNiños: " + this.ninios + "\nCantidad de noches: " + this.noches + "\nFecha de entrada: " + this.entrada.toLocaleDateString() + "\nFecha de salida: " + this.salida.toLocaleDateString() + "\nPrecio total: " + precioPorNoche (noches,precio));
+        return ("Tu reserva es: #" + this.id + "\n" + this.nombre + " " + this.apellido + "\nAdultos: " + this.adultos + "\nNiños: " 
+        + this.ninios + "\nCantidad de noches: " + this.noches + "\nFecha de entrada: " + this.entrada 
+        + "\nFecha de salida: " + this.salida + "\nPrecio total: " + precioPorNoche (this.noches));
     }
 
     //seteo id
@@ -27,9 +29,8 @@ class Reserva_hotel {
 }
 
 //precio
-const iva = 0.21;
-let precio = 3000;
-
-function precioPorNoche (noches, precio) {
+function precioPorNoche (noches) {
+    const iva = 0.21;
+    let precio = 3000;9
     return resultado = noches * precio + ((noches * precio)*iva)
 }

@@ -78,12 +78,10 @@ function iniciar_reserva (){
         arreglo_reservas.push(reserva_hotel);
     }
 
-    console.log (reserva_hotel);
+    alert (reserva_hotel.detalle_reserva ());
     let validacion = confirm ("¿Confirma su reserva?");
     
     if (validacion){
         alert("Reserva confirmada con éxito. ¡Muchas Gracias!");
-    }else {
-        elimino_reserva ();//pendiente a hacer
     }
 }
