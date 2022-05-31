@@ -37,7 +37,8 @@
     padding-bottom: 7rem;
 }
 .margin-top-h1 {
-    margin-top: 6rem;
+    margin-top: 10rem;
+    padding-right: 7rem;
 }
 .margin-div{
     margin-top: 20px;
@@ -56,18 +57,38 @@
         font-weight: bold;
 }    
 .container-buscador-input {
-        opacity: 50%;
-        color: $color-ppal;
-        background-color: $color-secund;
-        max-width: 7rem;
+        color: $color-secund;
+        background-color: transparent;
         max-height: 2rem;
+        max-width: 5rem;
+        border: solid 3px #fff;
 }
+.container-buscador-check {
+    color: $color-secund;
+    background-color: transparent;
+    max-height: 2rem;
+    max-width: 8rem;
+    border: solid 3px #fff;
+}
+.button-input {
+    color: $color-ppal;
+    background-color: $color-secund;
+    max-height: 2rem;
+    max-width: 5rem;
+}
+.button-input:hover {
+    background-color: #fff;
+}
+
 //fotos e info
 .image-size-info {
-    max-width: 100%;
+    max-width: 80%;
 }
 .image-bar-margin {
     margin-left: 2rem;
+}
+.image-icon-amenities {
+    max-width: 10%;
 }
 
 
@@ -89,4 +110,7 @@ footer {
 a {
     color: $color-ppal;
     text-decoration: underline;
+}
+.image-icon-footer {
+    max-width: 10%;
 }

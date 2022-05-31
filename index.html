@@ -18,6 +18,7 @@
 
 </head>
 <body>
+<script src="./javascript/script.js"></script>
 <!--navbar-->
 <div class="background-img padding-banner">  
     <header>
@@ -54,23 +55,40 @@
     </div>
 </div>
 
-<!--buscador-->
+<!--reservas-->
+  <form id="reserva_form">
     <div class="container container-buscador">
       <div class="row">
-        <div class="col-lg-4 d-flex justify-content-evenly">
-          <p class="container-buscador-p">Cantidad de noches</p>
-          <input type="number" class="container-buscador-input">
+        <div class="col-lg-3 d-flex justify-content-evenly">
+          <p class="container-buscador-p">CHECK IN</p>
+          <input id="check_in" placeholder="dd/mm/aaaa" type="date" class="container-buscador-check">
         </div>
-        <div class="col-lg-4 d-flex justify-content-evenly">
-          <p class="container-buscador-p">Adultos</p>
-          <input type="number" class="container-buscador-input">
+        <div class="col-lg-3 d-flex justify-content-evenly">
+          <p class="container-buscador-p">CHECK OUT</p>
+          <input id="check_out" placeholder="dd/mm/aaaa" type="date" class="container-buscador-check">
         </div>
-        <div class="col-lg-4 d-flex justify-content-evenly">
-          <p class="container-buscador-p">Niños</p>
-          <input type="number" class="container-buscador-input">
+        <div class="col-lg-2 d-flex justify-content-evenly">
+          <p class="container-buscador-p">ADULTOS</p>
+          <input id="adultos" type="number" class="container-buscador-input">
+        </div>
+        <div class="col-lg-2 d-flex justify-content-evenly">
+          <p class="container-buscador-p">NIÑOS</p>
+          <input id="ninios" type="number" class="container-buscador-input">
+        </div>
+        <div class="col-lg-2 d-flex justify-content-evenly">
+          <button type="button" class="button-input" id="reserva" onclick ="btn_reserva()">Reservar</button>
         </div>
       </div>
     </div>
+  </form>
+<!--
+<div id="reserva-confirmada">
+  <p>¡Reserva confirmada con éxito! Por favor ingrese sus datos, enviaremos su reserva por correo.</p>
+  <input type="text" value="Nombre y Apellido" id="nombre">
+  <input type="email" value="Correo eléctrónico">
+  <input type="submit" value="Enviar">
+</div>
+-->
 
 <!--fotos e info-->
     <div class="container-fluid">
@@ -85,7 +103,40 @@
         </div>
         <div class="col col-lg-6 col-12 col-sm-12 margin-top-h1">
           <h2 class="margin-div font-ppal">TITLE</h2>
-          <p class="font-secu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo unde sequi, porro adipisci possimus aspernatur debitis repellendus, quibusdam exercitationem vero vitae. Cupiditate perferendis aperiam atque dolor magni odio doloribus. Fugit!</p>
+          <p class="font-secu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo unde sequi, porro adipisci possimus aspernatur debitis repellendus, quibusdam exercitationem vero vitae. Cupiditate perferendis aperiam atque dolor magni odio doloribus. Fugit!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolorem voluptatibus distinctio atque eos quasi, dolore tempore. Hic architecto magni, placeat obcaecati, atque dolore maxime ducimus suscipit asperiores molestiae nesciunt.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis blanditiis deleniti rem nihil debitis vitae quos quo veniam ipsa! Nemo velit quas magnam aspernatur. Molestias asperiores nihil omnis eum minima.
+          </p>
+<!--amenities-->
+            <div class="row d-flex flex-row">
+                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+                  <img src="./img/bed.png" alt="iconohabitacion" class="image-icon-amenities">
+                  <p>Habitaciones amplias</p>
+                  </div>
+                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+                  <img src="./img/swimming-pool.png" alt="iconohabitacion" class="image-icon-amenities">
+                  <p>Piscina</p>
+                  </div>
+                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+                    <img src="./img/food-service.png" alt="iconohabitacion" class="image-icon-amenities">
+                    <p>Desayuno estilo americano</p>
+                  </div>
+            </div>
+
+            <div class="row d-flex flex-row">
+              <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+              <img src="" alt="iconohabitacion">
+              <p>Bajada a la playa</p>
+              </div>
+              <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+              <img src="" alt="iconohabitacion">
+              <p>Spa</p>
+              </div>
+              <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+                <img src="" alt="iconohabitacion">
+                <p>Gimnasio</p>
+              </div>
+        </div>
         </div>
       </div>
     </div>
@@ -104,7 +155,24 @@
               <li><p>Todos los derechos reservados a hotel Pons.</p></li>
               <li><a href="https://www.xn--victoriadiseo-tkb.com.ar/" target="_blank">Diseñado por Victoria Diseño</a></li>
             </ul>
-        </div>
+          </div>
+          <div class="col col-4">
+            <ul>
+              <li><strong><p>¡Seguinos en nuestras redes!</p></strong></li>
+            </ul>
+            <div class="row d-flex flex-row">
+              <div>
+              <ul>
+                <li><a href="http://instagram.com" target="blank"><img src="./img/87390.png" alt="instagram" class="image-icon-footer"></a></li>
+              </ul>
+              </div>
+              <div>  
+              <ul>
+              <li><a href="http://facebook.com" target="blank"><img src="./img/59439.png" alt="facebook" class="image-icon-footer"></a></li>
+              </ul>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </footer>  
@@ -112,6 +180,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!--js propio-->
 <script src="./javascript/hotel.js"></script>
-<script src="./javascript/script.js"></script>
+
 </body>
 </html>

@@ -4,9 +4,10 @@ let arreglo_reservas = new Array ();
 //variable generadora de ids
 let gen_id = 1;
 
-//inica simulador de reserva
+/*inica simulador de reserva
 alert ("¡Bienvenidos al Hotel Pons!");
 let flag = true;
+
 
 while (flag) {
     let inicio = confirm ("¿Desea inciar una reserva?");
@@ -20,30 +21,20 @@ while (flag) {
         flag = false;
     }
 }
+*/
 
-function crear_reserva (){
+/*function crear_reserva (){
     let check = true;
     
     while (check){
        let mensaje = "";
+     let nombre = document.getElementById("nombre");
+       let adultos = document.getElementById("adultos");
+       let ninios = document.getElementById("ninios");
+       let entrada = document.getElementById("check_in");
+       let salida = document.getElementById("check_out");
 
-       let nombre = prompt ("Ingrese su Nombre").trim();
-       let apellido = prompt ("Ingrese su Apellido").trim();
-       let adultos = parseInt (prompt("¿Cuántos adultos son?"));
-       let ninios = parseInt (prompt("¿Cuántos niños son?"));
-       let noches = parseInt (prompt("¿Cuántos noches desean hospedarse?"));
-       let entrada = prompt("Fecha de ingreso (dd/mm/aaaa)");
-       let salida = prompt("Fecha de ingreso (dd/mm/aaaa)");
-
-    if (!nombre){
-        mensaje += "\nDebe ingresar su nombre."
-    }
-
-    if (!apellido){
-        mensaje += "\nDebe ingresar su apellido."
-    }
-
-    if (!adultos){
+/*   if (!adultos){
        mensaje += "\nDebe ingresar la cantidad de adultos."
     }
 
@@ -63,11 +54,7 @@ function crear_reserva (){
         alert (mensaje);
         check = confirm ("Complete todos los datos.") //este check me va a cortar la función reserva
     }else{
-        return new Reserva_hotel (nombre, apellido, adultos, ninios, noches, entrada, salida);
-    }
-
-    }
-    return false;
+        return new Reserva_hotel (nombre, adultos, ninios, entrada, salida);
 }
 
 function iniciar_reserva (){
@@ -77,11 +64,38 @@ function iniciar_reserva (){
         gen_id ++;
         arreglo_reservas.push(reserva_hotel);
     }
+}
+*/
 
-    alert (reserva_hotel.detalle_reserva ());
-    let validacion = confirm ("¿Confirma su reserva?");
-    
-    if (validacion){
-        alert("Reserva confirmada con éxito. ¡Muchas Gracias!");
+//Btn reserva
+
+let btn_reserva = function (){
+    let check_in = document.getElementById("check_in").value;
+    let check_out = document.getElementById("check_out").value;
+    let adultos = document.getElementById("adultos").value;
+    let ninios = document.getElementById("ninios").value;
+
+    if (check_in == ""){
+        let check_in = document.getElementById("check_in").focus();
+    }else {
+        if (check_out== "") {
+            let check_out = document.getElementById("check_out").focus();
+        } else {
+            if (adultos == "") {
+                let adultos = document.getElementById("adultos").focus();
+            }else {
+                console.log("Check In: " + check_in + "\nChek Out: " + check_out + "\nCantidad de adultos: " + adultos + "\nCantidad de niños: " + ninios);
+                document.getElementById("check_in").value = "";
+                document.getElementById("check_out").value = "";
+                document.getElementById("adultos").value = "";
+                document.getElementById("ninios").value = "";
+                document.getElementById("check_in").focus();
+            }
+        }
     }
 }
+
+let boton = document.getElementById("reserva");
+boton.onclick = btn_reserva();
+
+   
