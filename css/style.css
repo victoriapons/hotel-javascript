@@ -65,10 +65,10 @@
 
 .container-buscador {
   padding: 2rem;
-  background-color: #02021b;
+  background-color: #afc1c7;
   border-radius: 5px;
   margin-top: -25px;
-  color: #afc1c7;
+  color: #02021b;
 }
 
 .container-buscador-p {
@@ -78,30 +78,30 @@
 }
 
 .container-buscador-input {
-  color: #afc1c7;
+  color: #02021b;
   background-color: transparent;
   max-height: 2rem;
   max-width: 5rem;
-  border: solid 3px #fff;
+  border: solid 2px #02021b;
 }
 
 .container-buscador-check {
-  color: #afc1c7;
+  color: #02021b;
   background-color: transparent;
   max-height: 2rem;
   max-width: 8rem;
-  border: solid 3px #fff;
+  border: solid 2px #02021b;
 }
 
 .button-input {
-  color: #02021b;
-  background-color: #afc1c7;
+  color: #afc1c7;
+  background-color: #02021b;
   max-height: 2rem;
   max-width: 5rem;
 }
 
 .button-input:hover {
-  background-color: #fff;
+  background-color: grey;
 }
 
 .image-size-info {
@@ -113,7 +113,7 @@
 }
 
 .image-icon-amenities {
-  max-width: 10%;
+  max-height: 20%;
 }
 
 footer {
@@ -162,6 +162,10 @@ a {
 
 .title-secund {
   font-family: "Raleway", sans-serif;
+}
+
+#reserva-confirmada {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

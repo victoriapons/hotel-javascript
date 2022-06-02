@@ -18,8 +18,8 @@
 
 </head>
 <body>
-<script src="./javascript/script.js"></script>
-<!--navbar-->
+
+  <!--navbar-->
 <div class="background-img padding-banner">  
     <header>
         <nav class="navbar navbar-expand-lg navbar-light navbar-modified">
@@ -76,19 +76,27 @@
           <input id="ninios" type="number" class="container-buscador-input">
         </div>
         <div class="col-lg-2 d-flex justify-content-evenly">
-          <button type="button" class="button-input" id="reserva" onclick ="btn_reserva()">Reservar</button>
+          <button type="button" class="button-input" id="reserva">Reservar</button>
         </div>
       </div>
     </div>
   </form>
-<!--
-<div id="reserva-confirmada">
-  <p>¡Reserva confirmada con éxito! Por favor ingrese sus datos, enviaremos su reserva por correo.</p>
-  <input type="text" value="Nombre y Apellido" id="nombre">
-  <input type="email" value="Correo eléctrónico">
-  <input type="submit" value="Enviar">
+
+<div class="container" id="reserva-confirmada">
+  <div class="row">
+    <div class="col d-flex flex-column">
+      <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-row justify-content-center">
+        <p>¡Reserva confirmada con éxito! Por favor ingrese sus datos, enviaremos su reserva por correo.</p>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-row justify-content-center">
+        <input type="text" value="Nombre y Apellido" id="nombre">
+        <input type="email" value="Correo eléctrónico" id="correo">
+        <button type="button" id="confirmacion"> Enviar</button>
+      </div>
+    </div>
+  </div>
 </div>
--->
+
 
 <!--fotos e info-->
     <div class="container-fluid">
@@ -109,31 +117,37 @@
           </p>
 <!--amenities-->
             <div class="row d-flex flex-row">
-                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
-                  <img src="./img/bed.png" alt="iconohabitacion" class="image-icon-amenities">
-                  <p>Habitaciones amplias</p>
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
+                    <img src="./img/bed.png" alt="iconohabitacion" class="image-icon-amenities">
                   </div>
-                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
-                  <img src="./img/swimming-pool.png" alt="iconohabitacion" class="image-icon-amenities">
-                  <p>Piscina</p>
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
+                    <p>Habitaciones amplias</p>
                   </div>
-                  <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
+                    <img src="./img/swimming-pool.png" alt="iconohabitacion" class="image-icon-amenities">
+                  </div>
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
+                    <p>Piscina</p>
+                  </div>
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
                     <img src="./img/food-service.png" alt="iconohabitacion" class="image-icon-amenities">
+                  </div>
+                  <div class="col col-lg-2 col-sm-12 col-md-12 d-flex flex-row justify-content-center"> 
                     <p>Desayuno estilo americano</p>
                   </div>
             </div>
 
             <div class="row d-flex flex-row">
               <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
-              <img src="" alt="iconohabitacion">
+              <img src="./img/sunbed.png" alt="iconohabitacion" class="image-icon-amenities">
               <p>Bajada a la playa</p>
               </div>
               <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
-              <img src="" alt="iconohabitacion">
+              <img src="./img/massage.png" alt="iconohabitacion" class="image-icon-amenities">
               <p>Spa</p>
               </div>
               <div class="col col-lg-4 col-sm-12 col-md-4 d-flex flex-row justify-content-space-between">
-                <img src="" alt="iconohabitacion">
+                <img src="./img/dumbbell.png" alt="iconohabitacion" class="image-icon-amenities">
                 <p>Gimnasio</p>
               </div>
         </div>
@@ -180,6 +194,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!--js propio-->
 <script src="./javascript/hotel.js"></script>
-
+<script src="./javascript/script.js"></script>
 </body>
 </html>

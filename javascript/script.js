@@ -68,12 +68,16 @@ function iniciar_reserva (){
 */
 
 //Btn reserva
+const buton_form = document.getElementById("reserva");
+
+buton_form.addEventListener("click", () => btn_reserva());
 
 let btn_reserva = function (){
     let check_in = document.getElementById("check_in").value;
     let check_out = document.getElementById("check_out").value;
     let adultos = document.getElementById("adultos").value;
     let ninios = document.getElementById("ninios").value;
+    let reserva_confirmada = document.getElementById("reserva-confirmada");
 
     if (check_in == ""){
         let check_in = document.getElementById("check_in").focus();
@@ -90,12 +94,32 @@ let btn_reserva = function (){
                 document.getElementById("adultos").value = "";
                 document.getElementById("ninios").value = "";
                 document.getElementById("check_in").focus();
+                document.getElementById("reserva-confirmada").style.display = "flex";
             }
         }
     }
 }
 
-let boton = document.getElementById("reserva");
-boton.onclick = btn_reserva();
+//confirmación de reserva
+const buton_confirm = document.getElementById("confirmacion");
 
-   
+buton_confirm.addEventListener("click", () => confirmacion_reserva());
+
+
+let confirmacion_reserva = function (){
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+
+    if (nombre == ""){
+        let nombre = document.getElementById("nombre").focus();
+    }else {
+        if (correo== "") {
+            let correo = document.getElementById("correo").focus();
+        } else {
+                console.log("Nombre: " + nombre + "\nCorreo: " + correo );
+                document.getElementById("nombre").value = "";
+                document.getElementById("correo").value = "";
+                let buton_confirm = document.getElementById("confirmacion").innerHTML = 'Enviado';
+            }
+    }
+}

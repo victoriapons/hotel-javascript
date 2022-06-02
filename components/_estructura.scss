@@ -46,10 +46,10 @@
 //filtrador
 .container-buscador {
     padding: 2rem;
-    background-color: $color-ppal;
+    background-color: $color-secund;
     border-radius: 5px;
     margin-top: -25px;
-    color: $color-secund;
+    color: $color-ppal;
 }
 .container-buscador-p {
         font-family: $font-sanserif;
@@ -57,27 +57,27 @@
         font-weight: bold;
 }    
 .container-buscador-input {
-        color: $color-secund;
+        color: $color-ppal;
         background-color: transparent;
         max-height: 2rem;
         max-width: 5rem;
-        border: solid 3px #fff;
+        border: solid 2px $color-ppal;
 }
 .container-buscador-check {
-    color: $color-secund;
+    color: $color-ppal;
     background-color: transparent;
     max-height: 2rem;
     max-width: 8rem;
-    border: solid 3px #fff;
+    border: solid 2px $color-ppal;
 }
 .button-input {
-    color: $color-ppal;
-    background-color: $color-secund;
+    color: $color-secund;
+    background-color: $color-ppal;
     max-height: 2rem;
     max-width: 5rem;
 }
 .button-input:hover {
-    background-color: #fff;
+    background-color: grey;
 }
 
 //fotos e info
@@ -88,7 +88,7 @@
     margin-left: 2rem;
 }
 .image-icon-amenities {
-    max-width: 10%;
+    max-height: 20%;
 }
 
 
