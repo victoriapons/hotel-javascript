@@ -1,73 +1,14 @@
 //variable array donde se van a guardar todas las reservas
 let arreglo_reservas = new Array ();
 
+const local_storage = reservas_guardadas;
+
+let reservas_guardadas = cargar_reservas();
+
 //variable generadora de ids
 let gen_id = 1;
 
-/*inica simulador de reserva
-alert ("¡Bienvenidos al Hotel Pons!");
-let flag = true;
-
-
-while (flag) {
-    let inicio = confirm ("¿Desea inciar una reserva?");
-    if (inicio == true) {
-        
-        //funcion para hacer reserva
-        iniciar_reserva ();
-    
-    }else {
-        //indicando flag=false termino el ciclo
-        flag = false;
-    }
-}
-*/
-
-/*function crear_reserva (){
-    let check = true;
-    
-    while (check){
-       let mensaje = "";
-     let nombre = document.getElementById("nombre");
-       let adultos = document.getElementById("adultos");
-       let ninios = document.getElementById("ninios");
-       let entrada = document.getElementById("check_in");
-       let salida = document.getElementById("check_out");
-
-/*   if (!adultos){
-       mensaje += "\nDebe ingresar la cantidad de adultos."
-    }
-
-    if (!noches){
-        mensaje += "\nDebe ingresar la cantidad de noches."
-    }
-
-    if (!entrada){
-        mensaje += "\nDebe ingresar la fecha de ingreso."
-    }
-    
-    if (!salida){
-        mensaje += "\nDebe ingresar la fecha de salida."
-    }
-
-    if(mensaje != "") {
-        alert (mensaje);
-        check = confirm ("Complete todos los datos.") //este check me va a cortar la función reserva
-    }else{
-        return new Reserva_hotel (nombre, adultos, ninios, entrada, salida);
-}
-
-function iniciar_reserva (){
-    let reserva_hotel = crear_reserva();
-    if (reserva_hotel) {
-        reserva_hotel.set_id (gen_id);
-        gen_id ++;
-        arreglo_reservas.push(reserva_hotel);
-    }
-}
-*/
-
-//Btn reserva
+//Btn reserva (1er form)
 const buton_form = document.getElementById("reserva");
 
 buton_form.addEventListener("click", () => btn_reserva());
@@ -95,12 +36,21 @@ let btn_reserva = function (){
                 document.getElementById("ninios").value = "";
                 document.getElementById("check_in").focus();
                 document.getElementById("reserva-confirmada").style.display = "flex";
+               
+                let reserva = new Reserva (id,nombre,correo, check_in,check_out,adultos,ninios);
+                
+                id++;
+
+                //guardo reserva en local storage
+                reservas_guardadas.push(reserva);
+                localStorage.setItem(local_storage,JSON.stringify(reservas_guardadas));
             }
         }
     }
 }
 
-//confirmación de reserva
+
+//confirmación de reserva (2do form)
 const buton_confirm = document.getElementById("confirmacion");
 
 buton_confirm.addEventListener("click", () => confirmacion_reserva());
@@ -120,6 +70,21 @@ let confirmacion_reserva = function (){
                 document.getElementById("nombre").value = "";
                 document.getElementById("correo").value = "";
                 let buton_confirm = document.getElementById("confirmacion").innerHTML = 'Enviado';
+                buton_confirm = document.getElementById("confirmacion").style.backgroundColor = 'rgb(175, 193, 199)';
             }
+    }
+}
+
+
+//funcion para guardar datos 
+
+function cargar_reservas (){
+    let arreglo = localStorage.getItem(reservas_guardadas);
+    if (arreglo){
+        arreglo= JSON.parse(arreglo);
+        for (let i = 0 ; i < arreglo.length ; i++){
+            let resev = arreglo[i];
+        }
+        return arreglo;
     }
 }

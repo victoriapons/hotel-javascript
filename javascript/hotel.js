@@ -15,8 +15,7 @@ class Reserva_hotel {
 
     detalle_reserva () {
         return ("Tu reserva es: #" + this.id + "\n" + this.nombre + " " + "\nAdultos: " + this.adultos + "\nNiños: " 
-        + this.ninios + "\nFecha de entrada: " + this.entrada + "\nFecha de salida: " + this.salida + 
-        "\nPrecio total: " + precioPorNoche (this.noches));
+        + this.ninios + "\nFecha de entrada: " + this.entrada + "\nFecha de salida: " + this.salida);
     }
 
     //seteo id
@@ -26,9 +25,10 @@ class Reserva_hotel {
     }
 }
 
-//precio
+/*precio
 function precioPorNoche (noches) {
     const iva = 0.21;
     let precio = 3000;
     return resultado = noches * precio + ((noches * precio)*iva)
 }
+*/
