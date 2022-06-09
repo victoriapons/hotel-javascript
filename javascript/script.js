@@ -1,9 +1,9 @@
 //variable array donde se van a guardar todas las reservas
 let arreglo_reservas = new Array ();
 
-const local_storage = reservas_guardadas;
+const reservas_guardadas = [];
 
-let reservas_guardadas = cargar_reservas();
+mostrar_local();
 
 //variable generadora de ids
 let gen_id = 1;
@@ -13,7 +13,7 @@ const buton_form = document.getElementById("reserva");
 
 buton_form.addEventListener("click", () => btn_reserva());
 
-let btn_reserva = function (){
+function btn_reserva(){
     let check_in = document.getElementById("check_in").value;
     let check_out = document.getElementById("check_out").value;
     let adultos = document.getElementById("adultos").value;
@@ -29,6 +29,7 @@ let btn_reserva = function (){
             if (adultos == "") {
                 let adultos = document.getElementById("adultos").focus();
             }else {
+
                 console.log("Check In: " + check_in + "\nChek Out: " + check_out + "\nCantidad de adultos: " + adultos + "\nCantidad de niños: " + ninios);
                 document.getElementById("check_in").value = "";
                 document.getElementById("check_out").value = "";
@@ -37,13 +38,11 @@ let btn_reserva = function (){
                 document.getElementById("check_in").focus();
                 document.getElementById("reserva-confirmada").style.display = "flex";
                
-                let reserva = new Reserva (id,nombre,correo, check_in,check_out,adultos,ninios);
-                
-                id++;
+                let reserva = new Reserva_hotel(nombre, ninios, adultos, check_in,check_out);
 
                 //guardo reserva en local storage
                 reservas_guardadas.push(reserva);
-                localStorage.setItem(local_storage,JSON.stringify(reservas_guardadas));
+                cargar_reservas(reserva);
             }
         }
     }
@@ -75,16 +74,24 @@ let confirmacion_reserva = function (){
     }
 }
 
+//funcion para mostrar datos
+function mostrar_local(){
+    if (localStorage.getItem("reservas") !=null){
+        data = JSON.parse(localStorage.getItem("reservas"));
+        console.log(data);
+    }
+}
 
 //funcion para guardar datos 
 
-function cargar_reservas (){
-    let arreglo = localStorage.getItem(reservas_guardadas);
-    if (arreglo){
-        arreglo= JSON.parse(arreglo);
-        for (let i = 0 ; i < arreglo.length ; i++){
-            let resev = arreglo[i];
-        }
-        return arreglo;
-    }
+function cargar_reservas(reserva){
+    let data_parsed = JSON.parse(localStorage.getItem("reservas"));
+    if (data_parsed ==null){
+        let array = [];
+        array.push(reserva);
+        localStorage.setItem("reservas", JSON.stringify(array));
+    } else {
+        data_parsed.push(reserva);
+        localStorage.setItem("reservas", JSON.stringify(data_parsed));
+    } 
 }

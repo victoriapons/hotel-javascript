@@ -2,12 +2,12 @@
 
 class Reserva_hotel {
 
-    constructor (nombre, adultos, ninios, entrada, salida){
+    constructor (nombre, adultos, ninios, check_in, check_out){
         this.nombre = nombre;
         this.adultos = adultos;
         this.ninios = ninios;
-        this.entrada = entrada;
-        this.salida = salida;
+        this.check_in = check_in;
+        this.check_out = check_out;
         this.id = -1;
     }
 
@@ -15,7 +15,7 @@ class Reserva_hotel {
 
     detalle_reserva () {
         return ("Tu reserva es: #" + this.id + "\n" + this.nombre + " " + "\nAdultos: " + this.adultos + "\nNiños: " 
-        + this.ninios + "\nFecha de entrada: " + this.entrada + "\nFecha de salida: " + this.salida);
+        + this.ninios + "\nFecha de entrada: " + this.check_in + "\nFecha de salida: " + this.check_out);
     }
 
     //seteo id
