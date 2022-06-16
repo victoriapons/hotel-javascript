@@ -22,12 +22,15 @@ function btn_reserva(){
 
     if (check_in == ""){
         let check_in = document.getElementById("check_in").focus();
+        swal("Ingrese día de llegada.");
     }else {
         if (check_out== "") {
             let check_out = document.getElementById("check_out").focus();
+            swal("Ingrese día de salida.");
         } else {
             if (adultos == "") {
                 let adultos = document.getElementById("adultos").focus();
+                swal("Ingrese cantidad de personas.");
             }else {
 
                 console.log("Check In: " + check_in + "\nChek Out: " + check_out + "\nCantidad de adultos: " + adultos + "\nCantidad de niños: " + ninios);
@@ -37,7 +40,8 @@ function btn_reserva(){
                 document.getElementById("ninios").value = "";
                 document.getElementById("check_in").focus();
                 document.getElementById("reserva-confirmada").style.display = "flex";
-               
+
+                //carga a array
                 let reserva = new Reserva_hotel(nombre, ninios, adultos, check_in,check_out);
 
                 //guardo reserva en local storage
@@ -61,15 +65,25 @@ let confirmacion_reserva = function (){
 
     if (nombre == ""){
         let nombre = document.getElementById("nombre").focus();
+        swal("Ingrese su nombre.");
     }else {
         if (correo== "") {
             let correo = document.getElementById("correo").focus();
+            swal("Ingrese un correo.");
         } else {
                 console.log("Nombre: " + nombre + "\nCorreo: " + correo );
                 document.getElementById("nombre").value = "";
                 document.getElementById("correo").value = "";
                 let buton_confirm = document.getElementById("confirmacion").innerHTML = 'Enviado';
                 buton_confirm = document.getElementById("confirmacion").style.backgroundColor = 'rgb(175, 193, 199)';
+
+                //sweetalert
+                swal({
+                    title: "¡Reserva confirmada!",
+                    text: "Los datos serán enviados a tu correo.",
+                    icon: "success",
+                    button: "Aceptar",
+                  });
             }
     }
 }

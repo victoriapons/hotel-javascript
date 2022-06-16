@@ -56,7 +56,6 @@
 
 .margin-top-h1 {
   margin-top: 10rem;
-  padding-right: 7rem;
 }
 
 .margin-div {
@@ -113,7 +112,7 @@
 }
 
 .image-icon-amenities {
-  max-height: 20%;
+  max-width: inherit;
 }
 
 footer {
@@ -135,7 +134,7 @@ a {
 }
 
 .image-icon-footer {
-  max-width: 10%;
+  max-width: 5%;
 }
 
 /*mobile*/
@@ -146,6 +145,10 @@ a {
     margin-right: 2rem;
     margin-left: 2rem;
   }
+
+  .image-icon-amenities {
+    max-width: 70px;
+  }
 }
 /*tablet*/
 @media (min-width: 768px) and (max-width: 992px) {
@@ -154,6 +157,10 @@ a {
     text-align: center;
     margin-right: 2rem;
     margin-left: 2rem;
+  }
+
+  .image-icon-amenities {
+    max-width: 70px;
   }
 }
 .title-ppal {
